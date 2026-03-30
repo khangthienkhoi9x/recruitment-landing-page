@@ -1,0 +1,3106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldLand Group - Tuyển Dụng Nhân Tài Bất Động Sản</title>
+    <meta name="description" content="Gia nhập GoldLand Group - Tập đoàn bất động sản hàng đầu Việt Nam. Khám phá cơ hội nghề nghiệp hấp dẫn với thu nhập không giới hạn.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* =========================================================
+   GoldLand Recruitment Landing Page - Styles
+   ========================================================= */
+
+/* CSS Custom Properties */
+:root {
+    --gold-50: #fffbeb;
+    --gold-100: #fef3c7;
+    --gold-200: #fde68a;
+    --gold-300: #fcd34d;
+    --gold-400: #fbbf24;
+    --gold-500: #f59e0b;
+    --gold-600: #d97706;
+    --gold-700: #b45309;
+
+    --navy-50: #eff6ff;
+    --navy-100: #dbeafe;
+    --navy-200: #bfdbfe;
+    --navy-700: #1d4ed8;
+    --navy-800: #1e3a5f;
+    --navy-900: #0f172a;
+    --navy-950: #0a1128;
+
+    --bg-primary: #050a18;
+    --bg-secondary: #0c1425;
+    --bg-card: rgba(15, 23, 50, 0.7);
+    --bg-card-hover: rgba(25, 38, 75, 0.8);
+    --bg-glass: rgba(255, 255, 255, 0.03);
+
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --gradient-gold: linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b);
+    --gradient-primary: linear-gradient(135deg, #f59e0b, #e67e22);
+    --gradient-hero: linear-gradient(135deg, rgba(5,10,24,0.92) 0%, rgba(12,20,37,0.85) 50%, rgba(5,10,24,0.75) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(251,191,36,0.08), rgba(251,191,36,0.02));
+
+    --border-subtle: rgba(251, 191, 36, 0.1);
+    --border-glow: rgba(251, 191, 36, 0.25);
+
+    --shadow-gold: 0 0 30px rgba(251, 191, 36, 0.15);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 16px 48px rgba(251, 191, 36, 0.12);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 9999px;
+
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --font-primary: 'Be Vietnam Pro', -apple-system, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul { list-style: none; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   Preloader
+   ========================================================= */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold-400);
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.loader-logo i {
+    font-size: 2.2rem;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.loader-progress {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-full);
+    animation: loadProgress 1.5s ease-out forwards;
+}
+
+@keyframes loadProgress {
+    to { width: 100%; }
+}
+
+/* =========================================================
+   Navigation
+   ========================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background: rgba(5, 10, 24, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: var(--gold-400);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+.logo i {
+    font-size: 1.6rem;
+}
+
+.logo strong {
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.nav-link.active {
+    color: var(--gold-400);
+}
+
+.btn-nav-apply {
+    background: var(--gradient-primary) !important;
+    color: var(--navy-950) !important;
+    font-weight: 600 !important;
+    padding: 10px 24px !important;
+}
+
+.btn-nav-apply:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--navy-950);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(245, 158, 11, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid rgba(251, 191, 36, 0.3);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold-400);
+    background: rgba(251, 191, 36, 0.08);
+    transform: translateY(-3px);
+}
+
+.btn-white {
+    background: white;
+    color: var(--navy-950);
+}
+
+.btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.2);
+}
+
+.btn-lg {
+    padding: 16px 36px;
+    font-size: 1rem;
+}
+
+.btn-sm {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* =========================================================
+   Hero Section
+   ========================================================= */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+    animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.15); }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+}
+
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(251, 191, 36, 0.3);
+    border-radius: 50%;
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 120px 0 80px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    color: var(--gold-400);
+    margin-bottom: 28px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-badge i {
+    font-size: 0.75rem;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.gradient-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hero-subtitle strong {
+    color: var(--gold-400);
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+}
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 28px 36px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(20px);
+    width: fit-content;
+}
+
+.stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    flex-wrap: wrap;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gold-400);
+    line-height: 1;
+}
+
+.stat-plus {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold-400);
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    width: 100%;
+    margin-top: 4px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-subtle);
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.hero-scroll-indicator a {
+    display: block;
+    width: 28px;
+    height: 44px;
+    border: 2px solid rgba(251, 191, 36, 0.3);
+    border-radius: 14px;
+    position: relative;
+}
+
+.hero-scroll-indicator span {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--gold-400);
+    border-radius: 2px;
+    animation: scroll 2s ease-in-out infinite;
+}
+
+@keyframes scroll {
+    0%, 100% { top: 8px; opacity: 1; }
+    50% { top: 24px; opacity: 0.3; }
+}
+
+/* =========================================================
+   Section Styles
+   ========================================================= */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gold-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.section-tag.center { margin-left: auto; margin-right: auto; }
+
+.section-tag i { font-size: 0.75rem; }
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.section-title.center { text-align: center; }
+
+.section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.section-desc.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   About Section
+   ========================================================= */
+.about-section {
+    background: var(--bg-secondary);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.about-img-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.about-img-wrapper img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-img-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.about-img-badge {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: var(--gradient-primary);
+    color: var(--navy-950);
+    padding: 16px 24px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
+}
+
+.badge-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.badge-text {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.about-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 32px;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+    transform: translateX(8px);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--gold-400);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.feature-item p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   Benefits Section
+   ========================================================= */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.benefit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-hover);
+    background: var(--bg-card-hover);
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-icon-wrapper {
+    margin-bottom: 20px;
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: var(--radius-md);
+    font-size: 1.5rem;
+    color: var(--gold-400);
+    transition: var(--transition);
+}
+
+.benefit-card:hover .benefit-icon {
+    background: var(--gradient-primary);
+    color: var(--navy-950);
+    border-color: transparent;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.benefit-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.benefit-highlight {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(251, 191, 36, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--gold-400);
+}
+
+/* =========================================================
+   Positions Section
+   ========================================================= */
+.positions-section {
+    background: var(--bg-secondary);
+}
+
+.positions-filter {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    border-color: var(--border-glow);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: var(--gradient-primary);
+    color: var(--navy-950);
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.position-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.position-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-hover);
+}
+
+.position-card.hidden {
+    display: none;
+}
+
+.position-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.position-tag {
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tag-hot {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.tag-new {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.tag-premium {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.position-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.position-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.position-meta i {
+    color: var(--gold-400);
+    margin-right: 4px;
+}
+
+.position-salary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(251, 191, 36, 0.06);
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--gold-400);
+    font-size: 0.95rem;
+}
+
+.position-requirements {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.position-requirements li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.position-requirements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--gold-400);
+    border-radius: 50%;
+}
+
+.position-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.position-slots {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.position-slots i {
+    color: var(--gold-400);
+    margin-right: 4px;
+}
+
+/* =========================================================
+   Culture Section
+   ========================================================= */
+.culture-showcase {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.culture-main-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.culture-main-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.culture-main-image:hover img {
+    transform: scale(1.03);
+}
+
+.culture-overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 32px 32px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.culture-overlay-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.culture-overlay-text p {
+    color: var(--gold-400);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.culture-values {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.culture-value-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.culture-value-card:hover {
+    border-color: var(--border-glow);
+    transform: translateX(8px);
+    background: var(--bg-card-hover);
+}
+
+.value-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.culture-value-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gold-400);
+}
+
+.culture-value-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* =========================================================
+   Career Path / Timeline
+   ========================================================= */
+.career-section {
+    background: var(--bg-secondary);
+}
+
+.career-timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.career-timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold-400), rgba(251,191,36,0.1));
+}
+
+.timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+    border: 2px solid var(--gold-400);
+    border-radius: 50%;
+    color: var(--gold-400);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-icon {
+    background: var(--gradient-primary);
+    color: var(--navy-950);
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-hover);
+}
+
+.timeline-period {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--gold-400);
+    margin-bottom: 8px;
+}
+
+.timeline-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* =========================================================
+   Testimonials Section
+   ========================================================= */
+.testimonials-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card {
+    min-width: 100%;
+    padding: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.testimonial-stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 24px;
+    color: var(--gold-400);
+    font-size: 1.1rem;
+}
+
+.testimonial-card blockquote {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 28px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.author-avatar {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    font-weight: 800;
+    color: var(--navy-950);
+    font-size: 1rem;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.testimonial-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.testimonial-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.testimonial-btn:hover {
+    border-color: var(--gold-400);
+    color: var(--gold-400);
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.testimonial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(251, 191, 36, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.testimonial-dot.active {
+    background: var(--gold-400);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* =========================================================
+   Application Form Section
+   ========================================================= */
+.apply-section {
+    background: var(--bg-secondary);
+}
+
+.apply-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.apply-info h2 {
+    margin-bottom: 16px;
+}
+
+.apply-info > p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 36px;
+}
+
+.apply-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.apply-contact-item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.apply-contact-item i {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: var(--radius-sm);
+    color: var(--gold-400);
+    font-size: 1rem;
+}
+
+.apply-contact-item strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.apply-contact-item span {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.apply-social {
+    display: flex;
+    gap: 12px;
+}
+
+.apply-social a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.apply-social a:hover {
+    background: var(--gradient-primary);
+    color: var(--navy-950);
+    border-color: transparent;
+    transform: translateY(-4px);
+}
+
+/* Form Styles */
+.apply-form-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-card);
+}
+
+.apply-form h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.required { color: #f87171; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold-400);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+    background: rgba(251, 191, 36, 0.02);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.form-group select option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px dashed var(--border-subtle);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.file-upload-label:hover {
+    border-color: var(--gold-400);
+    color: var(--gold-400);
+    background: rgba(251, 191, 36, 0.03);
+}
+
+.file-upload-label i {
+    font-size: 1.3rem;
+}
+
+.file-input {
+    display: none !important;
+}
+
+.file-name {
+    font-size: 0.85rem;
+    color: var(--gold-400);
+    margin-top: 8px;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.form-note i {
+    color: var(--gold-400);
+}
+
+/* =========================================================
+   CTA Banner
+   ========================================================= */
+.cta-banner {
+    background: var(--gradient-primary);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.cta-content {
+    position: relative;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy-950);
+    margin-bottom: 12px;
+}
+
+.cta-content p {
+    font-size: 1.05rem;
+    color: rgba(15, 17, 40, 0.7);
+    margin-bottom: 28px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+    background: var(--bg-primary);
+    padding: 64px 0 0;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    color: var(--gold-400);
+    margin-bottom: 16px;
+}
+
+.footer-logo strong { font-weight: 800; }
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 191, 36, 0.08);
+    border-radius: 50%;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background: var(--gold-400);
+    color: var(--navy-950);
+}
+
+.footer-links-group h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.footer-links-group ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links-group ul li a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.footer-links-group ul li a:hover {
+    color: var(--gold-400);
+    padding-left: 4px;
+}
+
+.footer-contact li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-contact li i {
+    color: var(--gold-400);
+    margin-top: 4px;
+    width: 16px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   Back to Top
+   ========================================================= */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 50%;
+    color: var(--navy-950);
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition);
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.4);
+}
+
+/* =========================================================
+   Modal
+   ========================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    text-align: center;
+    max-width: 420px;
+    transform: scale(0.9);
+    transition: var(--transition);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    color: #4ade80;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.modal-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   Animations
+   ========================================================= */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-img-wrapper img {
+        height: 350px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .positions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .culture-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .culture-main-image img {
+        height: 350px;
+    }
+
+    .culture-values {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .apply-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 360px;
+        height: 100vh;
+        background: rgba(5, 10, 24, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 100px 32px 32px;
+        gap: 4px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 1px solid var(--border-subtle);
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: var(--radius-sm);
+    }
+
+    .btn-nav-apply {
+        margin-top: 16px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-item {
+        min-width: 80px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .positions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .positions-filter {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.82rem;
+    }
+
+    .culture-values {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .section {
+        padding: 72px 0;
+    }
+
+    .apply-form-wrap {
+        padding: 28px 20px;
+    }
+
+    .testimonial-card {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-badge {
+        font-size: 0.78rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+</style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-logo">
+                <i class="fas fa-building"></i>
+                <span>GoldLand</span>
+            </div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="logo">
+                <i class="fas fa-building"></i>
+                <span>Gold<strong>Land</strong></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">Về Chúng Tôi</a></li>
+                <li><a href="#benefits" class="nav-link">Phúc Lợi</a></li>
+                <li><a href="#positions" class="nav-link">Vị Trí Tuyển Dụng</a></li>
+                <li><a href="#culture" class="nav-link">Văn Hóa</a></li>
+                <li><a href="#testimonials" class="nav-link">Chia Sẻ</a></li>
+                <li><a href="#apply" class="nav-link btn-nav-apply">Ứng Tuyển Ngay</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Modern real estate office" loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="container hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <i class="fas fa-star"></i>
+                <span>Top 5 Nhà Tuyển Dụng Bất Động Sản 2026</span>
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                Kiến Tạo <span class="gradient-text">Tương Lai</span><br>
+                Cùng Thiên Khôi
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+                Gia nhập đội ngũ hơn <strong>2,000+ chuyên viên</strong> trên toàn quốc. 
+                Thu nhập không giới hạn, cơ hội thăng tiến vượt bậc.
+            </p>
+            <div class="hero-cta animate-on-scroll">
+                <a href="#positions" class="btn btn-primary btn-lg" id="heroApplyBtn">
+                    <span>Khám Phá Cơ Hội</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn btn-outline btn-lg" id="heroLearnBtn">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Tìm Hiểu Thêm</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="2000">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Nhân Viên</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Chi Nhánh</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Dự Án</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-plus">%</div>
+                    <div class="stat-label">Hài Lòng</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#about"><span></span></a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <div class="about-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="GoldLand developments" loading="lazy">
+                        <div class="about-img-badge">
+                            <span class="badge-number">12</span>
+                            <span class="badge-text">Năm kinh nghiệm</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <div class="section-tag">
+                        <i class="fas fa-gem"></i>
+                        <span>Về GoldLand Group</span>
+                    </div>
+                    <h2 class="section-title">Tập Đoàn Bất Động Sản <span class="gradient-text">Hàng Đầu</span> Việt Nam</h2>
+                    <p class="about-text">
+                        GoldLand Group được thành lập năm 2014, là một trong những tập đoàn bất động sản uy tín nhất 
+                        tại Việt Nam với hơn 50 dự án lớn trải dài từ Bắc vào Nam. Chúng tôi tự hào mang đến không gian 
+                        sống đẳng cấp và cơ hội đầu tư hấp dẫn cho hàng nghìn gia đình Việt.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                            <div>
+                                <h4>Thương Hiệu Uy Tín</h4>
+                                <p>Top 5 doanh nghiệp BĐS uy tín nhất Việt Nam 3 năm liên tiếp</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <h4>Tăng Trưởng Bền Vững</h4>
+                                <p>Doanh thu tăng trưởng 45% mỗi năm, mở rộng liên tục</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4>Đội Ngũ Chuyên Nghiệp</h4>
+                                <p>Hơn 2,000 nhân viên được đào tạo bài bản, chuyên nghiệp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section benefits-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag center">
+                    <i class="fas fa-gift"></i>
+                    <span>Phúc Lợi Hấp Dẫn</span>
+                </div>
+                <h2 class="section-title center">Vì Sao Chọn <span class="gradient-text">GoldLand?</span></h2>
+                <p class="section-desc center">Chúng tôi cam kết mang đến môi trường làm việc tốt nhất cùng chế độ đãi ngộ xứng đáng</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll" data-delay="0">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    </div>
+                    <h3>Thu Nhập Hấp Dẫn</h3>
+                    <p>Lương cứng từ 10-30 triệu + hoa hồng không giới hạn. Top sales đạt thu nhập trên 100 triệu/tháng.</p>
+                    <div class="benefit-highlight">Lên đến 100tr+/tháng</div>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="100">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                    </div>
+                    <h3>Đào Tạo Chuyên Sâu</h3>
+                    <p>Chương trình đào tạo bài bản từ cơ bản đến nâng cao. Mentoring 1-1 với chuyên gia hàng đầu.</p>
+                    <div class="benefit-highlight">100+ khóa đào tạo/năm</div>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="200">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+                    </div>
+                    <h3>Thăng Tiến Nhanh</h3>
+                    <p>Lộ trình thăng tiến rõ ràng. Từ Nhân viên lên Trưởng nhóm chỉ trong 6 tháng nếu đạt KPI.</p>
+                    <div class="benefit-highlight">Thăng tiến sau 6 tháng</div>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="300">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon"><i class="fas fa-plane-departure"></i></div>
+                    </div>
+                    <h3>Du Lịch Thưởng</h3>
+                    <p>Du lịch trong và ngoài nước hàng năm. Team building hàng quý tại các resort 5 sao.</p>
+                    <div class="benefit-highlight">3-4 chuyến/năm</div>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="400">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon"><i class="fas fa-heartbeat"></i></div>
+                    </div>
+                    <h3>Bảo Hiểm Cao Cấp</h3>
+                    <p>Bảo hiểm sức khỏe toàn diện cho nhân viên và gia đình. Khám sức khỏe định kỳ tại bệnh viện quốc tế.</p>
+                    <div class="benefit-highlight">Cho cả gia đình</div>
+                </div>
+                <div class="benefit-card animate-on-scroll" data-delay="500">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon"><i class="fas fa-laptop-house"></i></div>
+                    </div>
+                    <h3>Môi Trường Hiện Đại</h3>
+                    <p>Văn phòng sang trọng tại các tòa nhà hạng A. Không gian làm việc linh hoạt, sáng tạo.</p>
+                    <div class="benefit-highlight">Văn phòng hạng A</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positions Section -->
+    <section id="positions" class="section positions-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag center">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Cơ Hội Nghề Nghiệp</span>
+                </div>
+                <h2 class="section-title center">Vị Trí Đang <span class="gradient-text">Tuyển Dụng</span></h2>
+                <p class="section-desc center">Khám phá các vị trí phù hợp với năng lực và đam mê của bạn</p>
+            </div>
+            <div class="positions-filter animate-on-scroll">
+                <button class="filter-btn active" data-filter="all" id="filterAll">Tất Cả</button>
+                <button class="filter-btn" data-filter="sales" id="filterSales">Kinh Doanh</button>
+                <button class="filter-btn" data-filter="management" id="filterManagement">Quản Lý</button>
+                <button class="filter-btn" data-filter="marketing" id="filterMarketing">Marketing</button>
+                <button class="filter-btn" data-filter="support" id="filterSupport">Hỗ Trợ</button>
+            </div>
+            <div class="positions-grid" id="positionsGrid">
+                <!-- Position Card 1 -->
+                <div class="position-card animate-on-scroll" data-category="sales" id="positionSalesExec">
+                    <div class="position-header">
+                        <div class="position-tag tag-hot"><i class="fas fa-fire"></i> Hot</div>
+                        <div class="position-tag tag-new">Mới</div>
+                    </div>
+                    <h3 class="position-title">Chuyên Viên Kinh Doanh BĐS</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh</span>
+                        <span><i class="fas fa-clock"></i> Toàn thời gian</span>
+                    </div>
+                    <div class="position-salary">
+                        <i class="fas fa-coins"></i>
+                        <span>15 - 80 triệu VNĐ/tháng</span>
+                    </div>
+                    <ul class="position-requirements">
+                        <li>Không yêu cầu kinh nghiệm</li>
+                        <li>Tốt nghiệp Cao đẳng trở lên</li>
+                        <li>Kỹ năng giao tiếp tốt</li>
+                        <li>Đam mê ngành bất động sản</li>
+                    </ul>
+                    <div class="position-footer">
+                        <span class="position-slots"><i class="fas fa-users"></i> Còn 20 vị trí</span>
+                        <a href="#apply" class="btn btn-primary btn-sm">Ứng Tuyển</a>
+                    </div>
+                </div>
+                <!-- Position Card 2 -->
+                <div class="position-card animate-on-scroll" data-category="sales" id="positionSeniorSales">
+                    <div class="position-header">
+                        <div class="position-tag tag-hot"><i class="fas fa-fire"></i> Hot</div>
+                    </div>
+                    <h3 class="position-title">Trưởng Nhóm Kinh Doanh</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Hà Nội, HCM, Đà Nẵng</span>
+                        <span><i class="fas fa-clock"></i> Toàn thời gian</span>
+                    </div>
+                    <div class="position-salary">
+                        <i class="fas fa-coins"></i>
+                        <span>30 - 120 triệu VNĐ/tháng</span>
+                    </div>
+                    <ul class="position-requirements">
+                        <li>Tối thiểu 2 năm kinh nghiệm BĐS</li>
+                        <li>Có khả năng quản lý đội nhóm</li>
+                        <li>Thành tích sales xuất sắc</li>
+                        <li>Kỹ năng lãnh đạo, coaching</li>
+                    </ul>
+                    <div class="position-footer">
+                        <span class="position-slots"><i class="fas fa-users"></i> Còn 10 vị trí</span>
+                        <a href="#apply" class="btn btn-primary btn-sm">Ứng Tuyển</a>
+                    </div>
+                </div>
+                <!-- Position Card 3 -->
+                <div class="position-card animate-on-scroll" data-category="management" id="positionBranchMgr">
+                    <div class="position-header">
+                        <div class="position-tag tag-premium"><i class="fas fa-crown"></i> Premium</div>
+                    </div>
+                    <h3 class="position-title">Giám Đốc Chi Nhánh</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toàn quốc</span>
+                        <span><i class="fas fa-clock"></i> Toàn thời gian</span>
+                    </div>
+                    <div class="position-salary">
+                        <i class="fas fa-coins"></i>
+                        <span>50 - 200 triệu VNĐ/tháng</span>
+                    </div>
+                    <ul class="position-requirements">
+                        <li>Tối thiểu 5 năm kinh nghiệm BĐS</li>
+                        <li>Đã quản lý đội ngũ 30+ người</li>
+                        <li>Tư duy chiến lược, lãnh đạo mạnh</li>
+                        <li>Có network rộng trong ngành</li>
+                    </ul>
+                    <div class="position-footer">
+                        <span class="position-slots"><i class="fas fa-users"></i> Còn 5 vị trí</span>
+                        <a href="#apply" class="btn btn-primary btn-sm">Ứng Tuyển</a>
+                    </div>
+                </div>
+                <!-- Position Card 4 -->
+                <div class="position-card animate-on-scroll" data-category="marketing" id="positionDigitalMkt">
+                    <div class="position-header">
+                        <div class="position-tag tag-new">Mới</div>
+                    </div>
+                    <h3 class="position-title">Chuyên Viên Digital Marketing</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh</span>
+                        <span><i class="fas fa-clock"></i> Toàn thời gian</span>
+                    </div>
+                    <div class="position-salary">
+                        <i class="fas fa-coins"></i>
+                        <span>15 - 35 triệu VNĐ/tháng</span>
+                    </div>
+                    <ul class="position-requirements">
+                        <li>1-3 năm kinh nghiệm Digital Marketing</li>
+                        <li>Thành thạo Facebook, Google Ads</li>
+                        <li>Kỹ năng phân tích data tốt</li>
+                        <li>Sáng tạo, chủ động</li>
+                    </ul>
+                    <div class="position-footer">
+                        <span class="position-slots"><i class="fas fa-users"></i> Còn 3 vị trí</span>
+                        <a href="#apply" class="btn btn-primary btn-sm">Ứng Tuyển</a>
+                    </div>
+                </div>
+                <!-- Position Card 5 -->
+                <div class="position-card animate-on-scroll" data-category="marketing" id="positionContentMkt">
+                    <div class="position-header">
+                        <div class="position-tag tag-new">Mới</div>
+                    </div>
+                    <h3 class="position-title">Content Creator BĐS</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Hà Nội, HCM</span>
+                        <span><i class="fas fa-clock"></i> Toàn thời gian</span>
+                    </div>
+                    <div class="position-salary">
+                        <i class="fas fa-coins"></i>
+                        <span>12 - 25 triệu VNĐ/tháng</span>
+                    </div>
+                    <ul class="position-requirements">
+                        <li>1 năm kinh nghiệm content</li>
+                        <li>Biết quay/dựng video ngắn</li>
+                        <li>Am hiểu xu hướng social media</li>
+                        <li>Ưu tiên có portfolio ấn tượng</li>
+                    </ul>
+                    <div class="position-footer">
+                        <span class="position-slots"><i class="fas fa-users"></i> Còn 4 vị trí</span>
+                        <a href="#apply" class="btn btn-primary btn-sm">Ứng Tuyển</a>
+                    </div>
+                </div>
+                <!-- Position Card 6 -->
+                <div class="position-card animate-on-scroll" data-category="support" id="positionAdmin">
+                    <div class="position-header">
+                        <div class="position-tag tag-new">Mới</div>
+                    </div>
+                    <h3 class="position-title">Nhân Viên Hành Chính - Nhân Sự</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh</span>
+                        <span><i class="fas fa-clock"></i> Toàn thời gian</span>
+                    </div>
+                    <div class="position-salary">
+                        <i class="fas fa-coins"></i>
+                        <span>10 - 18 triệu VNĐ/tháng</span>
+                    </div>
+                    <ul class="position-requirements">
+                        <li>1 năm kinh nghiệm HC-NS</li>
+                        <li>Tốt nghiệp ĐH chuyên ngành liên quan</li>
+                        <li>Thành thạo tin học văn phòng</li>
+                        <li>Cẩn thận, tỉ mỉ, có trách nhiệm</li>
+                    </ul>
+                    <div class="position-footer">
+                        <span class="position-slots"><i class="fas fa-users"></i> Còn 2 vị trí</span>
+                        <a href="#apply" class="btn btn-primary btn-sm">Ứng Tuyển</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="section culture-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag center">
+                    <i class="fas fa-heart"></i>
+                    <span>Văn Hóa Doanh Nghiệp</span>
+                </div>
+                <h2 class="section-title center">Nơi Đam Mê <span class="gradient-text">Được Thăng Hoa</span></h2>
+                <p class="section-desc center">Một gia đình lớn, nơi mỗi thành viên đều được tôn trọng và phát triển</p>
+            </div>
+            <div class="culture-showcase">
+                <div class="culture-main-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="GoldLand team culture" loading="lazy">
+                    <div class="culture-overlay-text">
+                        <h3>Đội Ngũ GoldLand</h3>
+                        <p>Gắn kết - Nhiệt huyết - Thành công</p>
+                    </div>
+                </div>
+                <div class="culture-values">
+                    <div class="culture-value-card animate-on-scroll" data-delay="0">
+                        <div class="value-number">01</div>
+                        <h4>Chính Trực</h4>
+                        <p>Đặt sự minh bạch và trung thực lên hàng đầu trong mọi giao dịch</p>
+                    </div>
+                    <div class="culture-value-card animate-on-scroll" data-delay="100">
+                        <div class="value-number">02</div>
+                        <h4>Đổi Mới</h4>
+                        <p>Không ngừng sáng tạo và ứng dụng công nghệ tiên tiến nhất</p>
+                    </div>
+                    <div class="culture-value-card animate-on-scroll" data-delay="200">
+                        <div class="value-number">03</div>
+                        <h4>Hợp Tác</h4>
+                        <p>Tinh thần đồng đội, cùng nhau chinh phục mọi thử thách</p>
+                    </div>
+                    <div class="culture-value-card animate-on-scroll" data-delay="300">
+                        <div class="value-number">04</div>
+                        <h4>Tận Tâm</h4>
+                        <p>Luôn đặt lợi ích của khách hàng và nhân viên làm trung tâm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Path Section -->
+    <section class="section career-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag center">
+                    <i class="fas fa-route"></i>
+                    <span>Lộ Trình Phát Triển</span>
+                </div>
+                <h2 class="section-title center">Con Đường <span class="gradient-text">Sự Nghiệp</span> Tại GoldLand</h2>
+                <p class="section-desc center">Lộ trình thăng tiến rõ ràng, minh bạch cho mọi vị trí</p>
+            </div>
+            <div class="career-timeline">
+                <div class="timeline-item animate-on-scroll" data-delay="0">
+                    <div class="timeline-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">Tháng 1-3</div>
+                        <h4>Thực Tập Sinh / Fresher</h4>
+                        <p>Đào tạo chuyên sâu, mentor 1-1, học hỏi thực tế thị trường</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll" data-delay="150">
+                    <div class="timeline-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">Tháng 3-12</div>
+                        <h4>Chuyên Viên Kinh Doanh</h4>
+                        <p>Tự chủ giao dịch, xây dựng tệp khách hàng, phát triển kỹ năng</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll" data-delay="300">
+                    <div class="timeline-icon"><i class="fas fa-users-cog"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">Năm 1-2</div>
+                        <h4>Trưởng Nhóm Kinh Doanh</h4>
+                        <p>Quản lý đội ngũ 5-10 người, huấn luyện thành viên mới</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll" data-delay="450">
+                    <div class="timeline-icon"><i class="fas fa-chess-king"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">Năm 2-4</div>
+                        <h4>Giám Đốc Kinh Doanh</h4>
+                        <p>Điều hành phòng kinh doanh, xây dựng chiến lược phát triển</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll" data-delay="600">
+                    <div class="timeline-icon"><i class="fas fa-crown"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">Năm 4+</div>
+                        <h4>Giám Đốc Chi Nhánh / Vùng</h4>
+                        <p>Quản lý toàn bộ hoạt động kinh doanh khu vực, thưởng cổ phần</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag center">
+                    <i class="fas fa-comments"></i>
+                    <span>Chia Sẻ Từ Đồng Nghiệp</span>
+                </div>
+                <h2 class="section-title center">Họ Nói Gì Về <span class="gradient-text">GoldLand?</span></h2>
+            </div>
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "Sau 2 năm tại GoldLand, tôi đã từ một nhân viên sales mới trở thành Trưởng nhóm với thu nhập 
+                            trung bình 80 triệu/tháng. Môi trường tại đây thực sự giúp tôi phát triển vượt bậc."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NM</div>
+                            <div>
+                                <div class="author-name">Nguyễn Minh Tuấn</div>
+                                <div class="author-role">Trưởng nhóm Kinh Doanh - CN HCM</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "Điều tôi yêu thích nhất ở GoldLand là văn hóa doanh nghiệp. Mọi người luôn hỗ trợ lẫn nhau, 
+                            không có sự cạnh tranh tiêu cực. Ban lãnh đạo luôn lắng nghe và tạo điều kiện tốt nhất."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">TL</div>
+                            <div>
+                                <div class="author-name">Trần Linh Chi</div>
+                                <div class="author-role">Chuyên viên Marketing - CN Hà Nội</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "Tôi gia nhập GoldLand khi chưa có kinh nghiệm BĐS. Chương trình đào tạo tại đây rất bài bản, 
+                            chỉ sau 6 tháng tôi đã tự tin chốt được những giao dịch lớn đầu tiên."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PH</div>
+                            <div>
+                                <div class="author-name">Phạm Hoàng Nam</div>
+                                <div class="author-role">Chuyên viên Kinh Doanh - CN Đà Nẵng</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-btn" id="testimonialPrev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                    <button class="testimonial-btn" id="testimonialNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="apply" class="section apply-section">
+        <div class="container">
+            <div class="apply-wrapper">
+                <div class="apply-info animate-on-scroll">
+                    <div class="section-tag">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Ứng Tuyển Ngay</span>
+                    </div>
+                    <h2 class="section-title">Sẵn Sàng Cho <span class="gradient-text">Bước Đi Mới?</span></h2>
+                    <p>Hãy để lại thông tin, đội ngũ tuyển dụng sẽ liên hệ bạn trong vòng 24 giờ.</p>
+                    <div class="apply-contact-list">
+                        <div class="apply-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Hotline Tuyển Dụng</strong>
+                                <span>1900 xxxx (Miễn phí)</span>
+                            </div>
+                        </div>
+                        <div class="apply-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>tuyendung@goldland.vn</span>
+                            </div>
+                        </div>
+                        <div class="apply-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Trụ sở chính</strong>
+                                <span>Tầng 25, Landmark 81, TP. HCM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apply-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="apply-form-wrap animate-on-scroll">
+                    <form id="applicationForm" class="apply-form">
+                        <h3>Thông Tin Ứng Viên</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Họ và tên <span class="required">*</span></label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="0xxx xxx xxx" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="birthYear">Năm sinh</label>
+                                <input type="number" id="birthYear" name="birthYear" placeholder="VD: 1998" min="1970" max="2008">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Vị trí ứng tuyển <span class="required">*</span></label>
+                            <select id="position" name="position" required>
+                                <option value="">-- Chọn vị trí --</option>
+                                <option value="sales">Chuyên Viên Kinh Doanh BĐS</option>
+                                <option value="team-lead">Trưởng Nhóm Kinh Doanh</option>
+                                <option value="branch-director">Giám Đốc Chi Nhánh</option>
+                                <option value="digital-marketing">Chuyên Viên Digital Marketing</option>
+                                <option value="content-creator">Content Creator BĐS</option>
+                                <option value="hr-admin">Nhân Viên Hành Chính - Nhân Sự</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Kinh nghiệm làm việc</label>
+                            <select id="experience" name="experience">
+                                <option value="">-- Chọn kinh nghiệm --</option>
+                                <option value="0">Chưa có kinh nghiệm</option>
+                                <option value="1">Dưới 1 năm</option>
+                                <option value="1-3">1 - 3 năm</option>
+                                <option value="3-5">3 - 5 năm</option>
+                                <option value="5+">Trên 5 năm</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Giới thiệu bản thân</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Chia sẻ ngắn gọn về bản thân, kinh nghiệm và lý do muốn gia nhập GoldLand..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="file-upload-label" for="resume">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Tải lên CV (PDF, DOC - Tối đa 5MB)</span>
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" class="file-input">
+                            </label>
+                            <div class="file-name" id="fileName"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
+                            <span>Gửi Đơn Ứng Tuyển</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="form-note"><i class="fas fa-shield-alt"></i> Thông tin của bạn được bảo mật tuyệt đối theo chính sách của GoldLand Group.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Bạn Có Câu Hỏi?</h2>
+                <p>Liên hệ ngay hotline tuyển dụng để được tư vấn chi tiết về cơ hội nghề nghiệp tại GoldLand</p>
+                <a href="tel:19001234" class="btn btn-white btn-lg">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>1900 xxxx</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-building"></i>
+                        <span>Gold<strong>Land</strong></span>
+                    </a>
+                    <p>Tập đoàn bất động sản hàng đầu Việt Nam. Kiến tạo không gian sống đẳng cấp, nâng tầm giá trị cuộc sống.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Liên Kết</h4>
+                    <ul>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#positions">Vị trí tuyển dụng</a></li>
+                        <li><a href="#benefits">Phúc lợi</a></li>
+                        <li><a href="#culture">Văn hóa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Tầng 25, Landmark 81, TP.HCM</li>
+                        <li><i class="fas fa-phone-alt"></i> 1900 xxxx</li>
+                        <li><i class="fas fa-envelope"></i> tuyendung@goldland.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GoldLand Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Cảm Ơn Bạn!</h3>
+            <p>Đơn ứng tuyển đã được gửi thành công. Đội ngũ tuyển dụng sẽ liên hệ bạn trong vòng 24 giờ.</p>
+            <button class="btn btn-primary" id="closeModal">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+/* =========================================================
+   GoldLand Recruitment Landing Page - JavaScript
+   ========================================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // =====================================================
+    // Preloader
+    // =====================================================
+    const preloader = document.getElementById('preloader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 1800);
+    });
+
+    // Fallback if load event already fired
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+    }, 3000);
+
+    // =====================================================
+    // Navbar Scroll Effect
+    // =====================================================
+    const navbar = document.getElementById('navbar');
+    const backToTopBtn = document.getElementById('backToTop');
+
+    function handleScroll() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 80) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        if (scrollY > 500) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+
+        // Active nav link based on section
+        const sections = document.querySelectorAll('section[id]');
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            
+            if (navLink) {
+                if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                    navLink.classList.add('active');
+                } else {
+                    navLink.classList.remove('active');
+                }
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // Back to Top
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // =====================================================
+    // Mobile Menu
+    // =====================================================
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // =====================================================
+    // Hero Particles
+    // =====================================================
+    const particlesContainer = document.getElementById('heroParticles');
+    
+    function createParticles() {
+        const count = window.innerWidth < 768 ? 15 : 30;
+        for (let i = 0; i < count; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = (Math.random() * 4 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+            particle.style.animationDelay = (Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+    createParticles();
+
+    // =====================================================
+    // Intersection Observer for Animations
+    // =====================================================
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.dataset.delay || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, parseInt(delay));
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    // =====================================================
+    // Counter Animation
+    // =====================================================
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const statsSection = document.querySelector('.hero-stats');
+    if (statsSection) {
+        counterObserver.observe(statsSection);
+    }
+
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number[data-count]');
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.count);
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        });
+    }
+
+    // =====================================================
+    // Position Filter
+    // =====================================================
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const positionCards = document.querySelectorAll('.position-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            positionCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Add fadeInUp animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // =====================================================
+    // Testimonial Slider
+    // =====================================================
+    const track = document.getElementById('testimonialTrack');
+    const prevBtn = document.getElementById('testimonialPrev');
+    const nextBtn = document.getElementById('testimonialNext');
+    const dotsContainer = document.getElementById('testimonialDots');
+    const slides = track.querySelectorAll('.testimonial-card');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    // Create dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('testimonial-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    startAutoSlide();
+
+    // Touch/Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextSlide();
+            else prevSlide();
+            resetAutoSlide();
+        }
+    }, { passive: true });
+
+    // =====================================================
+    // File Upload Display
+    // =====================================================
+    const fileInput = document.getElementById('resume');
+    const fileNameDisplay = document.getElementById('fileName');
+
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+            fileNameDisplay.innerHTML = `<i class="fas fa-file-alt"></i> ${file.name} (${sizeMB} MB)`;
+        } else {
+            fileNameDisplay.textContent = '';
+        }
+    });
+
+    // =====================================================
+    // Form Submission
+    // =====================================================
+    const form = document.getElementById('applicationForm');
+    const modal = document.getElementById('successModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Simple validation
+        const fullName = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const position = document.getElementById('position').value;
+
+        if (!fullName || !phone || !email || !position) {
+            showToast('Vui lòng điền đầy đủ thông tin bắt buộc (*)', 'error');
+            return;
+        }
+
+        // Phone validation
+        const phoneRegex = /^(0|\+84)[0-9]{9,10}$/;
+        if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+            showToast('Số điện thoại không hợp lệ', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showToast('Email không hợp lệ', 'error');
+            return;
+        }
+
+        // Simulate submission
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Đang gửi...</span>';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            modal.classList.add('active');
+            form.reset();
+            fileNameDisplay.textContent = '';
+            submitBtn.innerHTML = '<span>Gửi Đơn Ứng Tuyển</span> <i class="fas fa-paper-plane"></i>';
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // =====================================================
+    // Toast Notification
+    // =====================================================
+    function showToast(message, type = 'info') {
+        const existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        toast.innerHTML = `
+            <i class="fas ${type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i>
+            <span>${message}</span>
+        `;
+
+        Object.assign(toast.style, {
+            position: 'fixed',
+            bottom: '30px',
+            left: '50%',
+            transform: 'translateX(-50%) translateY(20px)',
+            padding: '14px 28px',
+            background: type === 'error' ? 'rgba(239, 68, 68, 0.95)' : 'rgba(34, 197, 94, 0.95)',
+            color: 'white',
+            borderRadius: '12px',
+            fontSize: '0.92rem',
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            zIndex: '9999',
+            opacity: '0',
+            transition: '0.3s ease',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+            fontFamily: 'var(--font-primary)'
+        });
+
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateX(-50%) translateY(0)';
+        });
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(20px)';
+            setTimeout(() => toast.remove(), 300);
+        }, 3500);
+    }
+
+    // =====================================================
+    // Smooth scroll for anchor links
+    // =====================================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+});
+
+</script>
+</body>
+</html>
