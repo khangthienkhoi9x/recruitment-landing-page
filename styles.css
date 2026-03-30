@@ -193,7 +193,7 @@ ul { list-style: none; }
 }
 
 .brand-logo {
-    max-height: 48px;
+    max-height: 65px;
     height: auto;
     width: auto;
     max-width: 100%;
@@ -203,11 +203,11 @@ ul { list-style: none; }
 }
 
 .brand-logo-md {
-    max-height: 60px;
+    max-height: 75px;
 }
 
 .brand-logo-lg {
-    max-height: 80px;
+    max-height: 100px;
 }
 
 .logo i {
