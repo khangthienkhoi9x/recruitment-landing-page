@@ -245,14 +245,14 @@ ul { list-style: none; }
 
 .btn-nav-apply {
     background: var(--gradient-primary) !important;
-    color: var(--navy-950) !important;
+    color: #ffffff !important;
     font-weight: 600 !important;
     padding: 10px 24px !important;
 }
 
 .btn-nav-apply:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+    box-shadow: var(--shadow-gold);
 }
 
 .hamburger {
@@ -322,12 +322,12 @@ ul { list-style: none; }
 
 .btn-primary {
     background: var(--gradient-primary);
-    color: var(--navy-950);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(245, 158, 11, 0.35);
+    box-shadow: var(--shadow-hover);
 }
 
 .btn-outline {
