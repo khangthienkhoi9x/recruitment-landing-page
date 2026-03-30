@@ -1075,7 +1075,7 @@ ul { list-style: none; }
 .value-number {
     font-size: 2.5rem;
     font-weight: 900;
-    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05));
+    background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
